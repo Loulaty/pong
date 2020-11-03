@@ -1,2 +1,3 @@
 # pong
-https://loulaty.github.io/pong/index.html
+https://loulaty.github.io/pong
+
