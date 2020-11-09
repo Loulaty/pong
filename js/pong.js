@@ -4,7 +4,7 @@ let gauche=parseInt($("#balle").css("left"));
 let haut=parseInt($("#balle").css("top"));
 
 
-// creer une classe terrain et une classe balle
+// creer une classe terrain et une classe balle (majuscules)
 class Terrain{
     constructor($element){
         this.$element=$element;
