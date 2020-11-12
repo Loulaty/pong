@@ -3,31 +3,52 @@ let largeur=$("#balle").width();
 let gauche=parseInt($("#balle").css("left"));
 let haut=parseInt($("#balle").css("top"));
 
+let largeur=$("#raquette1").width();
+let haut=parseInt($("#raquette1").css("top"));
+
 
 // creer une classe terrain et une classe balle (majuscules)
 class Terrain{
-    constructor($element){
-        this.$element=$element;
-        this.largeur= $element.width();
-        this.hauteur=$element.height();
+    constructor($html){
+        this.$html=$html;
+        this.largeur= $("terrain").width();
+        this.hauteur=$("terrain").height();
     }
 }
 class Balle{
-    constructor($element){
-        this.$element=$element;
-        this.haut=parseInt($element.css("top"));
-        this.gauche=parseInt($element.css("left"));
-        this.vitesseX=2;
-        this.vitesseY=0.5;
+    constructor($html){
+        this.$html=$html;
+        this.haut=parseInt($("balle").css("top"));
+        this.gauche=parseInt($("balle").css("left"));
+        this.vitesseX=0.5;
+        this.vitesseY=2;
     }
     majHTML(){
-        this.$element.css("left",balle.gauche);
-        this.$element.css("top",balle.haut); 
+        this.$html.css("left",balle.gauche);
+        this.$html.css("top",balle.haut); 
+    }
+}
+
+class Raquette1{
+    constructor($html){
+        this.$html=$html;
+        this.haut=parseInt($("raquette1").css("top"));
+        this.gauche=parseInt($("raquette1").css("left"));
+        this.vitesse=1;
+    }
+    majHTML(){
+        this.$html.css("top",raquette1.haut);
+ 
     }
 }
 
 
+
+
 // creer un objet en le reliant a la classe 
+let raquette1=new Raquette1($("#raquette1"))
+console.log(raquette1);
+
 let terrain=new Terrain($("#terrain"))
 console.log(terrain);
 
