@@ -29,19 +29,15 @@ body{
     background-color:white;
     border-radius: 100%;
 }
-#raquette1{
-    position: relative;
-    top : 50%;
-    left: -1800%;
-    width: 15px;
-    height: 100px; 
+.raquette{
+    position: absolute;
+    top: calc( 50% - var(--hauteur)/2 );
+    width: 10px;
+    height: var(--hauteur);
     background-color: white;
+    --hauteur: 25%;
 }
+
 #raquette2{
-    position: relative;
-    top : 50%;
-    left: 4700%;
-    width: 15px;
-    height: 100px; 
-    background-color: white;
+    right : 0;
 }
