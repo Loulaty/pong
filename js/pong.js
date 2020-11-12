@@ -6,6 +6,9 @@ let haut=parseInt($("#balle").css("top"));
 let largeur=$("#raquette1").width();
 let haut=parseInt($("#raquette1").css("top"));
 
+let largeur=$("#raquette2").width();
+let haut=parseInt($("#raquette2").css("top"));
+
 
 // creer une classe terrain et une classe balle (majuscules)
 class Terrain{
@@ -38,6 +41,18 @@ class Raquette1{
     }
     majHTML(){
         this.$html.css("top",raquette1.haut);
+ 
+    }
+}
+class Raquette2{
+    constructor($html){
+        this.$html=$html;
+        this.haut=parseInt($("raquette2").css("top"));
+        this.gauche=parseInt($("raquette2").css("left"));
+        this.vitesse=1;
+    }
+    majHTML(){
+        this.$html.css("top",raquette2.haut);
  
     }
 }
