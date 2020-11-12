@@ -1,3 +1,4 @@
+//creer la classze balle
 class Balle{
     constructor($html){
         this.$html=$html;

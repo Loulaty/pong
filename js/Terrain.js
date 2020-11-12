@@ -1,3 +1,4 @@
+// creer le terrain
 class Terrain{
     constructor($html){
         this.$html=$html;

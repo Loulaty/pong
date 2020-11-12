@@ -1,3 +1,4 @@
+//creer les raquettes avec une seule classe pour 2
 class Raquette{
     constructor($html){
         this.$html=$html;
