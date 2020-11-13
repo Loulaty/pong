@@ -48,16 +48,16 @@ console.log(terrain.largeur)
     raquette2.haut=raquette2.haut+raquette2.vitesse*raquette2.direction;
 
 
-    if(raquette1.haut>terrain.hauteur){
-        raquette1.haut=terrain.hauteur;
+    if(raquette1.haut+raquette1.hauteur>terrain.hauteur){
+        raquette1.haut=terrain.hauteur-raquette1.hauteur;
         raquette1.direction=raquette1.direction*-1;
     }
     if(raquette1.haut<0){
         raquette1.haut=0;
         raquette1.direction=raquette1.direction*-1;
     }
-    if(raquette2.haut>terrain.hauteur){
-        raquette2.haut=terrain.hauteur;
+    if(raquette2.haut+raquette2.hauteur>terrain.hauteur){
+        raquette2.haut=terrain.hauteur-raquette1.hauteur;
         raquette2.direction=raquette2.direction*-1;
     }
     if(raquette2.haut<0){
