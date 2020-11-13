@@ -65,7 +65,7 @@ console.log(terrain.largeur)
     }
     //r2 bas
     if(raquette2.haut+raquette2.hauteur>terrain.hauteur){
-        raquette2.haut=terrain.hauteur-raquette1.hauteur;
+        raquette2.haut=terrain.hauteur-raquette2.hauteur;
         raquette2.direction=raquette2.direction*-1;
     }
     //r2 haut
