@@ -20,32 +20,13 @@ console.log(terrain);
 //faire une boucle rebond
 let i=0;
 setInterval(function () {
-    balle.gauche = balle.gauche +balle.vitesseX;
-    balle.haut = balle.haut + balle.vitesseY;
-    if (balle.gauche > terrain.largeur - balle.diametre) {
-        balle.gauche = terrain.largeur - balle.diametre;
-        balle.vitesseX = balle.vitesseX*-1;
-    }
-
-    if (balle.gauche <0 ) {
-        balle.gauche = 0;
-        balle.vitesseX = balle.vitesseX*-1;
-    }
-    if (balle.haut > terrain.hauteur - balle.diametre) {
-        balle.haut = terrain.hauteur- balle.diametre;
-        balle.vitesseY = balle.vitesseY*-1;
-
-    }
-    if (balle.haut <0 ) {
-        balle.haut = 0;
-        balle.vitesseY = balle.vitesseY*-1;
-    }
-
-    // deplacement des raquettes
+    // deplacements
+    balle.bouge();
     raquette1.bouge();
     raquette2.bouge();
 
     console.log(raquette1.direction);
+    console.log(balle.direction);
 
     balle.majHTML();
 
