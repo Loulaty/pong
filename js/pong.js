@@ -50,3 +50,17 @@ setInterval(function () {
     balle.majHTML();
 
 }, 10);
+
+//savoir touche pressée
+window.addEventListener("keydown", function (event) {
+    if (event.defaultPrevented) { return}
+    console.log("La touche '"+event.key+ "' a été enfoncée")
+    event.preventDefault();
+}, true);
+
+//savoir touche relachée
+window.addEventListener("keyup", function (event) {
+    if (event.defaultPrevented) { return}
+    console.log("La touche '"+event.key+ "' a été relachée")
+    event.preventDefault();
+}, true);

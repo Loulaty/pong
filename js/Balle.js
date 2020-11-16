@@ -20,4 +20,10 @@ class Balle {
         this.$html.css("left", this.gauche);
         this.$html.css("top", this.haut);
     }
+    monte(){
+        this.direction *= -1
+    }
+    descend(){
+        this.direction *= 1
+    }
 }
