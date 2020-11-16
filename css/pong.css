@@ -34,11 +34,11 @@ body{
 /*pour les 2 raquettes : #=id et .=class */
 .raquette{
     position: absolute;
+    --hauteur: 25%;
     top: calc( 50% - var(--hauteur)/2 );
     width: 10px;
     height: var(--hauteur);
     background-color: white;
-    --hauteur: 25%;
 }
 
 #raquette2{
