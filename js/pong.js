@@ -1,7 +1,7 @@
-//parametres de la balle
+/*parametres de la balle
 let largeur = $("#balle").width();
 let gauche = parseInt($("#balle").css("left"));
-let haut = parseInt($("#balle").css("top"));
+let haut = parseInt($("#balle").css("top"));*/
 
 //relier un objet a la class
 let raquette1=new Raquette($("#raquette1"))
@@ -16,20 +16,11 @@ console.log(terrain);
 let balle=new Balle($("#balle"))
 console.log(terrain);
 
-
-//faire une boucle rebond
-let i=0;
 setInterval(function () {
     // deplacements
     balle.bouge();
     raquette1.bouge();
     raquette2.bouge();
-
-    console.log(raquette1.direction);
-    console.log(balle.direction);
-
-    balle.majHTML();
-
 }, 10);
 
 //savoir touche pressée

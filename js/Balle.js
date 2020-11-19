@@ -2,6 +2,7 @@
 class Balle {
     constructor($html) {
         this.$html = $html;
+        this.largeur = $html.width()
         this.haut = parseInt($html.css("top"));
         this.gauche = parseInt($html.css("left"));
         this.vitesseX = 3;
@@ -11,21 +12,21 @@ class Balle {
     }
 
     get bas() {
-        return this.haut + this.diametre
+        return this.haut + this.largeur;
     }
-
+    set bas(value) {
+        this.haut = value - this.diamtre;
+    }
     get droite() {
-        return this.gauche + this.diamtre
+        return this.gauche + this.largeur;
     }
-
-    //mise a jour
-    majHTML() {
-        this.$html.css("left", this.gauche);
-        this.$html.css("top", this.haut);
+    set droite(value) {
+        this.gauche = value - this.diametre;
     }
 
     bouge() {
-        this.gauche = this.gauche + this.vitesse * this.direction;
+        this.gauche += Math.cos(this.angle) * this.vitesseX;
+        this.haut += Math.sin(this.angle) * this.vitesseY;
         this.limiteMouvements();
         this.majHTML();
     }
@@ -44,22 +45,22 @@ class Balle {
     }
 
     limiteMouvements() {
-        if (this.gauche > terrain.largeur - this.diametre) {
+        if (this.gauche < terrain.largeur - this.diametre) {
             this.gauche = terrain.largeur - this.diametre;
             this.demitourD();
         }
         console.log(this.droite)
-        if (this.droite < terrain.largeur - this.diametre) {
+        if (this.droite > terrain.largeur - this.diametre) {
             this.droite = terrain.largeur - this.diametre;
             this.demitourD;
         }
-        if (this.haut > terrain.hauteur - this.diametre) {
+        if (this.haut < terrain.hauteur - this.diametre) {
             this.haut = terrain.hauteur - this.diametre;
             this.descend();
 
         }
         console.log(this.bas)
-        if (this.bas < terrain.hauteur - this.diametre) {
+        if (this.bas > terrain.hauteur - this.diametre) {
             this.bas = terrain.hauteur - this.diametre;
             this.monte();
         }
