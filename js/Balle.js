@@ -4,10 +4,10 @@ class Balle {
         this.$html = $html;
         this.haut = parseInt($html.css("top"));
         this.gauche = parseInt($html.css("left"));
-        this.vitesseX = 0.5;
-        this.vitesseY = 0.5;
+        this.vitesseX = 1;
+        this.vitesseY = 3;
         this.diametre = $html.height()
-        this.direction = 1;
+        this.direction = -1;
     }
 
     get bas() {
@@ -32,24 +32,13 @@ class Balle {
     }
 
     limiteMouvements() {
-        if (this.gauche < 0 - this.diametre) {
-            this.gauche = terrain.largeur - this.diametre;
-            this.diection = -1
-        }
-        console.log(this.droite)
-        if (this.droite > terrain.largeur - this.diametre) {
-            this.droite = terrain.largeur - this.diametre;
-            this.diection = 1
-        }
-        if (this.haut < 0 - this.diametre) {
-            this.haut = terrain.hauteur - this.diametre;
-            
-
-        }
-        console.log(this.bas)
-        if (this.bas > terrain.hauteur - this.diametre) {
-            this.bas = terrain.hauteur - this.diametre;
-            this.direction = 1
+        if(this.gauche>terrain.largeur+this.diametre){
+            this.direction*=-1}
+        if(this.haut>terrain.hauteur-this.diametre){
+            this.direction*=-1}
+        if(balle.gauche<0){
+            this.direction*=1;}
+        if(balle.haut<0){
+            this.direction*=-1;}
         }
     }
-}
