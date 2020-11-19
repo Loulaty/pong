@@ -1,7 +1,7 @@
-/*parametres de la balle
+//parametres de la balle
 let largeur = $("#balle").width();
 let gauche = parseInt($("#balle").css("left"));
-let haut = parseInt($("#balle").css("top"));*/
+let haut = parseInt($("#balle").css("top"));
 
 //relier un objet a la class
 let raquette1=new Raquette($("#raquette1"))
