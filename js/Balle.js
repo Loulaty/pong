@@ -19,8 +19,8 @@ class Balle {
     }
 
     bouge() {
-        balle.gauche+=balle.vitesseY;
-        balle.haut+=balle.vitesseX;
+        balle.gauche+=balle.vitesseY*balle.direction;
+        balle.haut+=balle.vitesseX*balle.direction;
         this.limiteMouvements();
         this.majHTML();
     }
@@ -32,7 +32,7 @@ class Balle {
     }
 
     limiteMouvements() {
-        if (this.gauche < terrain.largeur - this.diametre) {
+        if (this.gauche < 0 - this.diametre) {
             this.gauche = terrain.largeur - this.diametre;
             this.diection = -1
         }
@@ -41,7 +41,7 @@ class Balle {
             this.droite = terrain.largeur - this.diametre;
             this.diection = 1
         }
-        if (this.haut < terrain.hauteur - this.diametre) {
+        if (this.haut < 0 - this.diametre) {
             this.haut = terrain.hauteur - this.diametre;
             
 
