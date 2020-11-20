@@ -1,38 +1,68 @@
-//parametres de la balle
-let largeur = $("#balle").width();
-let gauche = parseInt($("#balle").css("left"));
-let haut = parseInt($("#balle").css("top"));
+//mise en lien des objets
+let terrain = new Terrain($("#terrain"));
+let balle = new Balle($("#balle"));
+let raquetteD = new Raquette($("#droite"));
+let raquetteG = new Raquette($("#gauche"));
 
-//relier un objet a la class
-let raquette1=new Raquette($("#raquette1"))
-raquette1.descend();
+//faire bouger les objets
+setInterval(function()
+{
+    balle.bouger();
+    raquetteG.bouger();
+    raquetteD.bouger();
 
-let raquette2=new Raquette($("#raquette2"))
-raquette2.monte();
-
-let terrain=new Terrain($("#terrain"))
-console.log(terrain);
-
-let balle=new Balle($("#balle"))
-console.log(terrain);
-
-setInterval(function () {
-    // deplacements
-    balle.bouge();
-    raquette1.bouge();
-    raquette2.bouge();
 }, 10);
-
-//savoir touche pressée
+//faire deplacer les raquettes avec les touches
+//detecter une touche pressée
 window.addEventListener("keydown", function (event) {
-    if (event.defaultPrevented) { return}
-    console.log("La touche '"+event.key+ "' a été enfoncée")
+    if (event.defaultPrevented) {return}
+    if (event.key === "a" || event.key === "A")
+    {
+        raquetteG.monter();
+    }
+
+    else if (event.key === "q" || event.key === "Q")
+    {
+        raquetteG.descendre();
+    }
+
+    else if (event.key === "p" || event.key === "P")
+    {
+        raquetteD.monter();
+    }
+
+    else if (event.key === "m" || event.key === "M")
+    {
+        raquetteD.descendre();
+    }
+
     event.preventDefault();
 }, true);
 
-//savoir touche relachée
-window.addEventListener("keyup", function (event) {
-    if (event.defaultPrevented) { return}
-    console.log("La touche '"+event.key+ "' a été relachée")
+//detecter une touche lachée
+window.addEventListener("keyup", function (event)
+{
+    if (event.defaultPrevented) {return}
+    if (event.key === "a"
+        || event.key === "A"
+        || event.key === "q"
+        || event.key === "Q")
+    {
+        raquetteG.arret();
+    }
+
+    else if (event.key === "q" || event.key === "Q")
+    {
+        raquetteG.arret();
+    }
+
+    if (event.key === "p"
+        || event.key === "P"
+        || event.key === "m"
+        || event.key === "M")
+    {
+        raquetteD.arret();
+    }
+
     event.preventDefault();
 }, true);

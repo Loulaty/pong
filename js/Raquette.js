@@ -1,47 +1,94 @@
-class Raquette {
-    constructor($html) {
-        this.$html = $html;
-        this.haut = parseInt($html.css("top"));
-        this.largeur = $html.width();
-        this.hauteur = $html.height();
-        this.vitesse = 1.5;
-        this.direction = 1;
-        console.log(this.haut)
+//parametres de la raquette
+class Raquette
+{
+    constructor($element)
+    {
+        this.$element = $element;
+//faire bouger les raquettes avec les touches
+        /**
+         *
+         * @type {number}
+         */
+        this.haut = parseInt($element.css("top"));
 
+        /**
+         *
+         * @type {number}
+         */
+        this.gauche = parseInt($element.css("left"));
+
+        /**
+         *
+         * @type {number}
+         */
+        this.vitesseY = 1.5;
+        this.hauteur = $element.height();
+
+        this.largeur = $element.width();
+
+        this.direction = 0;
     }
-    get bas(){
-        return this.haut+this.hauteur
+
+    get bas()
+    {
+        return this.haut+this.hauteur;
     }
-    //creation fonctions
-    majHTML(){
-        this.$html.css("top", this.haut);
+
+    set bas(value)
+    {
+        this.haut = value - this.hauteur;
     }
-    monte(){
-        this.direction = -1;
+
+    get droite()
+    {
+        return this.gauche+this.largeur;
     }
-    descend(){
-        this.direction = 1;
+
+    set droite(value)
+    {
+        this.gauche = value - this.largeur;
     }
-    // on fait bouger les raquettes
-    bouge(){
-        this.haut = this.haut + this.vitesse*this.direction;
-        this.limiteMouvements();
+//deplacement de la raquette
+    bouger()
+    {
+        this.haut += this.vitesseY * this.direction;
+        this.limite();
         this.majHTML();
     }
-    //limites raquettes
-    limiteMouvements(){
-        console.log(this.bas)
-        if (this.bas > terrain.hauteur) {
-            this.monte();
 
+    monter()
+    {
+        this.direction = -1;
+    }
+
+    descendre()
+    {
+        this.direction = 1;
+    }
+
+    arret()
+    {
+        this.direction = 0;
+    }
+
+
+//les collisions de la raquette
+    limite()
+    {
+        if(this.bas > terrain.hauteur)
+        {
+            this.bas = terrain.hauteur;
         }
 
-        if (this.haut <0 ) {
-            this.descend();
-
+        if (this.haut < 0)
+        {
+            this.haut = 0;
         }
+    }
 
-
+    majHTML()
+    {
+        this.$element.css("top", this.haut);
     }
 
 }

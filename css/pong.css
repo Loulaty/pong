@@ -1,46 +1,86 @@
-/* pour le fond de la page*/
-body{
+body
+{
+/* parametres du site lui même */
+    background-color: #000;
+    color: #fff;
+    font-family: monospace;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: black;
-    color: #fff;
-    font-family: monospace;
 }
-/* pour les parametres du terrain*/
-#terrain{
+
+#terrain
+{
+/* creation des bords du terrain */
     position: relative;
-    top: center ;
-    left: center;
-    border:1px solid rgb(0, 0, 0); 
-    border-top-color : #fff;
-    border-bottom-color : #fff;
-    width:800px;
-    height:400px;
+    border-top : 1px solid white;
+    border-bottom : 1px solid white;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    width: 800px;
+    height: 400px;
+
 }
-/* pour les parametres de la balle*/
-#balle{
+
+/* les couleurs quand la balle touche les bords*/
+.tiltHaut
+{
+    border-top-color:  rgb(0, 255, 0) !important;
+
+}
+
+.tiltBas
+{
+    border-bottom-color:  rgb(0, 255, 0) !important;
+
+}
+
+.tiltEchecG
+{
+    border-left-color: rgb(150, 0, 0) !important;
+}
+
+.tiltEchecD
+{
+    border-right-color: rgb(150, 0, 0) !important;
+}
+
+/* #pour une classe*/
+#balle
+{
     position: absolute;
     top: 50%;
     left: 50%;
+    border-radius: 10px;
     width: 20px;
     height: 20px;
-    background-color:white;
-    border-radius: 100%;
-}
-/*pour les 2 raquettes : #=id et .=class */
-.raquette{
-    position: absolute;
-    --hauteur: 25%;
-    top: calc( 50% - var(--hauteur)/2 );
-    width: 10px;
-    height: var(--hauteur);
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
-#raquette2{
-    right : 0;
+/* .pour l'identifiant*/
+.raquette
+{
+    position: absolute;
+    --hauteur : 25%;
+    top : calc( 50% - var(--hauteur)/2 ); 
+    width: 10px;
+    height : var(--hauteur);
+    background-color: rgb(255, 255, 255);
+
+}
+
+/*placements des raquettes*/
+#gauche
+{
+
+    left: 1%;
+}
+
+#droite
+{
+
+    right: 1%;
 }
