@@ -80,13 +80,14 @@ class Balle
         this.rebond();
         this.majHTML();
     }
-//faire rebondir la balle sur le terrain
+
+//faire rebondir la balle sur les raquettes
     rebond()
     {
         if (this.droite > raquetteD.gauche) {
             if (this.bas > raquetteD.haut) {
                 if (this.haut < raquetteD.bas) {
-                    this.vitesseX *= -1;
+                    this.vitesseX *= -1.2;
                     console.log(1)
                 }
             }
@@ -95,7 +96,7 @@ class Balle
         if (this.gauche < raquetteG.droite) {       
             if (this.bas > raquetteG.haut) {        
                 if (this.haut < raquetteG.bas) {
-                    this.vitesseX *= -1;
+                    this.vitesseX *= -1.2;
                     console.log(2)
                 }
             }
