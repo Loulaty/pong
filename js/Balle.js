@@ -40,8 +40,8 @@ class Balle
 //Mouvement de la balle
     bouger()
     {
-        this.gauche += Math.cos(this.angle) * this.vitesseX;
-        this.haut += Math.sin(this.angle) * this.vitesseY;
+        this.gauche += this.vitesseX;
+        this.haut += this.vitesseY;
         this.limite();
         this.majHTML();
     }
