@@ -27,27 +27,28 @@ body
 
 }
 
+
 /* les couleurs quand la balle touche les bords*/
 .tiltHaut
 {
-    border-top-color:  rgb(0, 255, 0) !important;
+    border-top-color:  rgb(255, 187, 0) !important;
 
 }
 
 .tiltBas
 {
-    border-bottom-color:  rgb(0, 255, 0) !important;
+    border-bottom-color: rgb(255, 187, 0) !important;
 
 }
 
 .tiltEchecG
 {
-    border-left-color: rgb(150, 0, 0) !important;
+    border-left-color: rgb(23, 255, 15) !important;
 }
 
 .tiltEchecD
 {
-    border-right-color: rgb(150, 0, 0) !important;
+    border-right-color: rgb(90, 0, 150) !important;
 }
 
 /* #pour une classe*/
@@ -73,6 +74,10 @@ body
     background-color: rgb(255, 255, 255);
 
 }
+.rtouche{
+    background-color: rgb(255, 196, 2);
+    filter: blur(4px)
+}
 
 /*placements des raquettes*/
 #gauche
@@ -89,18 +94,22 @@ body
 
 /* creation d'un score*/
 .score{
-    display: flex;
-    top : 0%;    
+    top : 0;
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    display: flex;  
+    justify-content: center;
+    align-items: center;
 }
 
 #J1
 {
-
-    right: 1%;
+    color: rgb(149, 0, 248);
 }
 
 #J2
 {
-
-    left: 1%;
+    left: 50%;
+    color: rgb(75, 247, 118);
 }

@@ -28,7 +28,7 @@ class Raquette
 
         this.direction = 0;
     }
-
+    
     get bas()
     {
         return this.haut+this.hauteur;
