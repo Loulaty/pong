@@ -91,4 +91,8 @@ class Raquette
         this.$element.css("top", this.haut);
     }
 
+    gagne() {
+        this.score = this.score + 1;
+        this.$score.text(this.score);
+    }
 }

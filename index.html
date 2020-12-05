@@ -8,14 +8,32 @@
 
     </html>
     <body>
+<!-- Ecran de lancement-->
+        <div class="ecran-debut">
+            <div>
+                Joueur 1 <br><br>
+                utilisez les touches <br><br>
+                <span class="touche">A</span> 
+                    et 
+                <span class="touche">Q</span> 
+            </div>
+            <div>
+                Joueur 2 <br><br>
+                utilisez les touches <br><br> 
+                <span class="touche">P</span> 
+                    et 
+                <span class="touche">M</span> 
+            </div>
+            <a href="#" class="btn btn-go">JOUER</a>
+        </div>
+
 <!-- mettre les objet dans la page (balle et raquette DANS le terrain)-->
         <div id="terrain">
             <div id="balle"></div>
             <div id="gauche" class="raquette"></div>
             <div id="droite" class="raquette"></div>
-            <div i="score">
-                <div id="J1" class="score"> <h1>0</h1></div>
-                <div id="J2"class="score"><h1>0</h1></div>
+            <div id="J1" class="score"> <h1>0</h1></div>
+            <div id="J2"class="score"><h1>0</h1></div>
             </div>
         </body>
         </div>
@@ -24,6 +42,7 @@
 
 
 <!-- faire des liens avec les classes -->
+    <script src="js/Joueur.js"></script>
     <script src="js/Balle.js"></script>
     <script src="js/Terrain.js"></script>
     <script src="js/Raquette.js"></script>
