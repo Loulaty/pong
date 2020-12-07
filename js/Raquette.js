@@ -1,7 +1,7 @@
 //parametres de la raquette
 class Raquette
 {
-    constructor($element)
+    constructor($element, joueur)
     {
         this.$element = $element;
 //faire bouger les raquettes avec les touches
@@ -27,6 +27,9 @@ class Raquette
         this.largeur = $element.width();
 
         this.direction = 0;
+        this.score = 0 
+        this.joueur = joueur
+
     }
     
     get bas()
@@ -93,6 +96,7 @@ class Raquette
 
     gagne() {
         this.score = this.score + 1;
-        this.$score.text(this.score);
+        console.log("+1  de score");
+        this.joueur.text(this.score);
     }
 }

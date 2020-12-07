@@ -1,17 +1,25 @@
 //mise en lien des objets
 let terrain = new Terrain($("#terrain"));
 let balle = new Balle($("#balle"));
-let raquetteD = new Raquette($("#droite"));
-let raquetteG = new Raquette($("#gauche"));
-
+let raquetteD = new Raquette($("#droite"), $("#J1"));
+let raquetteG = new Raquette($("#gauche"),$("#J2"));
+let demarrer = false
 //faire bouger les objets
 setInterval(function()
 {
+    if(demarrer){
     balle.bouger();
     raquetteG.bouger();
     raquetteD.bouger();
-
+    }
 }, 10);
+
+$("#btn-jouer").on("mouseup", function (event) {
+    event.preventDefault();
+    demarrer = true;
+    $("#ecran-debut").addClass("invisible");
+});
+
 //faire deplacer les raquettes avec les touches
 //detecter une touche pressée
 window.addEventListener("keydown", function (event) {

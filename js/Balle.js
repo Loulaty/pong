@@ -52,8 +52,9 @@ class Balle
 //Droit
         if(this.droite > terrain.largeur)
         {
-            this.recentrer();
             terrain.tiltEchecD();
+            this.recentrer();
+            raquetteD.gagne();
         }
         
 //Bas
@@ -75,6 +76,7 @@ class Balle
         {
             terrain.tiltEchecG();
             this.recentrer();
+            raquetteG.gagne();
         }
 
         this.rebond();
